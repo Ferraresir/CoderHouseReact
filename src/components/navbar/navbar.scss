@@ -1,0 +1,123 @@
+nav{
+   height: 7vh;
+   background-color:#000000a9;
+           h1 {
+            position: absolute;
+            width: 200px;
+            margin-top:2vh;
+            left: 5%;
+            color:#eda7a9;
+            text-transform: uppercase;
+        }
+
+         ul {
+            margin-top: 1vh;
+            float:  right;
+            margin-right: 45px;
+            list-style: none;
+        
+
+            li {
+                
+                display: inline-flex;
+                line-height: 50px;
+                margin: -8px 15px;
+
+                a {
+                    position: relative;
+                    padding: 5px 0;
+                    color:#45a29e;
+                    font-size: 18px;
+                    text-decoration: none;                    
+                }
+                a:hover{
+                    background: -webkit-linear-gradient(rgba(69,162,158,1) 0%, rgba(0,255,244,1) 100%);
+                    -webkit-background-clip: text;
+                    -moz-background-clip: text;
+                    background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    
+                }
+            }
+        }
+    }
+
+ #res-menu{
+    display: none;
+}
+
+#burger{
+    display: none;
+    float: right;
+    line-height:50px ;
+    margin-right: 30px;
+    cursor: pointer;
+
+    div{
+        width: 20px;
+        height: 3px;
+        background-color:#45a29e;
+        margin: 5px;
+        transition: all 0.3s ease ;
+    }
+}
+
+@media (max-width: 870px ){
+    #burger{
+        display: block !important;
+        margin-top: 1.5vh;
+    }
+    nav ul{
+        position: fixed;
+        width: 100%;
+        height: 37vh;
+        background:#0b0c10fb;
+        top: 7vh;
+        left: -100%;
+        text-align: center;
+        transition: .5s;
+        z-index: 10;
+        margin-top: 0;
+
+        li {
+            display: block;
+            margin: 40px 0 ;
+            line-height: 30px;
+
+            a{
+                font-size: 20px;
+                text-shadow: 0.2px 0.2px white;
+
+            }
+
+        }
+    }
+}
+#res-menu:checked ~ ul{
+    left: 0;
+}
+
+#res-menu:checked ~ * .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+}
+
+#res-menu:checked ~ * .line2{
+    opacity: 0;
+}
+
+#res-menu:checked ~ * .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+}
+
+#icon{
+    color: green;
+}
+
+#cart{
+    position: relative;
+    top: 5px;
+    img{
+        height: 27px;
+    }
+
+}

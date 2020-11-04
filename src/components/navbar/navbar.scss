@@ -1,17 +1,17 @@
 nav{
-   height: 7vh;
+   height: 4rem;
    background-color:#000000a9;
            h1 {
             position: absolute;
             width: 200px;
-            margin-top:2vh;
+            margin-top: 1rem;
             left: 5%;
             color:#eda7a9;
             text-transform: uppercase;
         }
 
          ul {
-            margin-top: 1vh;
+            margin-top: 1rem;
             float:  right;
             margin-right: 45px;
             list-style: none;
@@ -21,7 +21,7 @@ nav{
                 
                 display: inline-flex;
                 line-height: 50px;
-                margin: -8px 15px;
+                margin: -0.5rem 30px;
 
                 a {
                     position: relative;
@@ -65,14 +65,14 @@ nav{
 @media (max-width: 870px ){
     #burger{
         display: block !important;
-        margin-top: 1.5vh;
+        margin-top: 1rem;
     }
     nav ul{
         position: fixed;
         width: 100%;
-        height: 37vh;
+        height: 20rem;
         background:#0b0c10fb;
-        top: 7vh;
+        top: 4rem;
         left: -100%;
         text-align: center;
         transition: .5s;

@@ -1,0 +1,51 @@
+
+$primary-color:#eda7a9;
+$secundary-color:#45a29e;
+
+.card{
+    border: 1px solid grey;
+    width: fit-content;
+    height: 15rem;
+    display: block;
+    margin: 0 auto 0 auto;
+    background-color: rgba(0, 0, 0, 0.541);
+
+    button{
+        position: relative;
+        bottom: -7rem;
+        border: none;
+        border-radius: 8px;
+        background-color:$primary-color;
+        cursor: pointer;
+        width: 70%;
+        height: 1.3rem;
+    }
+    *::selection{
+        background: transparent;
+    }
+}
+
+#counter{
+    display: flex;
+    justify-content: space-around;
+    background-color:$secundary-color;
+    border-radius: 10px;
+    position: relative;
+    bottom: -6rem;
+    width: 90%;
+    margin: 0 auto 0 auto;
+    border: 1px solid #67E1B4;
+
+
+    span{
+        cursor: pointer;
+        width: 1rem;
+        border-radius: 50%;
+        
+    }
+    span:hover{
+        background-color: $primary-color;
+        
+    }
+
+}

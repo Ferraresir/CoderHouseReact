@@ -5,19 +5,15 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
     const [counter, setCounter] = useState(initialValue);
 
     const decrement = () => {
-        if (counter === min) {
-
-        } else {
+        if (counter === min) 
+        return;
             setCounter(counter - 1);
-        }
     }
 
     const increment = () => {
-        if (counter >= max) {
-
-        } else {
+        if (counter >= max) 
+        return;
             setCounter(counter + 1);
-        }
     }
 
     const handleBtn = () => {

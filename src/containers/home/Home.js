@@ -1,5 +1,5 @@
 import React from 'react';
-import ItemCount from '../itemCount/itemCount';
+import ItemCount from '../../components/itemCount/itemCount';
 import './home.scss';
 
 const onAdd = (counter) => {

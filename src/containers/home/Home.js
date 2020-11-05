@@ -1,6 +1,5 @@
 import React from 'react';
 import ItemCount from '../itemCount/itemCount';
-import UserForm from '../../components/userForm/userForm'
 import './home.scss';
 
 const onAdd = (counter) => {

@@ -5,7 +5,7 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
     const [counter, setCounter] = useState(initialValue);
 
     const decrement = () => {
-        if (counter == min) {
+        if (counter === min) {
 
         } else {
             setCounter(counter - 1);

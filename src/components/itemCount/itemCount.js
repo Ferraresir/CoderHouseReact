@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './itemCount.scss'
 
 const ItemCount = ({ initialValue, max, min, onAdd }) => {
@@ -17,9 +17,9 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
 
     }
 
-    const handleBtn =()=>{
+    useEffect(() => {
         onAdd(counter)
-    }
+    }, [counter])
 
     return (
         <div className="card">
@@ -27,7 +27,6 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
                 <span onClick={decrement}>-</span>
                 <span>{counter}</span>
                 <span onClick={increment}>+</span></div>
-                <button onClick={handleBtn}>Chori</button>
         </div>
     );
 }

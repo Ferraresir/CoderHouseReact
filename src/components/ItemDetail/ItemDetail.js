@@ -5,9 +5,14 @@ import './ItemDetail.scss'
 
 
 const ItemDetail = ({ data }) => {
+    const [count, setCount] = useState()
 
     const onAdd = (counter) => {
-        console.log("Esta comprando " + counter + " de " + data.id);
+        setCount(counter)
+    }
+
+    const handleBtn = () => {
+        console.log("Esta comprando " + count + " de " + data.id);
     }
 
     return (
@@ -20,7 +25,10 @@ const ItemDetail = ({ data }) => {
                 <p>Precio: {data.price}</p>
                 <p>Stock:  {data.available_quantity} - Vendidos:{data.sold_quantity}</p>
                 <p>{data.warranty}</p>
-                <ItemCount id="chori" initialValue={1} max={10} min={1} onAdd={onAdd}/>                        
+                <div className="compra">
+                    <ItemCount id="chori" initialValue={1} max={10} min={1} onAdd={onAdd} />
+                    <button onClick={handleBtn}>Agregar al carrito</button>
+                </div>
             </div>
         </div>
     )

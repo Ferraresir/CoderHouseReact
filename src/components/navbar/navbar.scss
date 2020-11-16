@@ -4,7 +4,7 @@ nav{
            h1 {
             position: absolute;
             width: 200px;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
             left: 5%;
             color:#eda7a9;
             text-transform: uppercase;
@@ -65,7 +65,7 @@ nav{
 @media (max-width: 870px ){
     #burger{
         display: block !important;
-        margin-top: 1rem;
+        margin-top: 1.5rem;
     }
     nav ul{
         position: fixed;

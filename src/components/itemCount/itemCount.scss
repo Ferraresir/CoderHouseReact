@@ -1,8 +1,6 @@
 .card{
     position: relative;
-    width: 250px;
-    border: 1px solid black;
-    border-radius: 10px;
+    width: 240px;
     padding: 10px;
     text-align: center;
     margin: 70px auto 0 auto;
@@ -28,16 +26,5 @@
         ::selection{
             color: none;
         }
-    }
-    button{
-        background-color: lightcoral;
-        border-radius: 10px;
-        padding: 1px 5px;
-        margin-top: 5px;
-        border: none;
-        cursor: pointer;
-    }
-    button:hover{
-            box-shadow: 0 0 0.6rem #eda7a9;
     }
 }

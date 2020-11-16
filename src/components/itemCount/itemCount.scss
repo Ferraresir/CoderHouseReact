@@ -1,51 +1,43 @@
-
-$primary-color:#eda7a9;
-$secundary-color:#45a29e;
-
 .card{
-    border: 1px solid grey;
-    width: fit-content;
-    height: 15rem;
-    display: block;
-    margin: 0 auto 0 auto;
-    background-color: rgba(0, 0, 0, 0.541);
-
-    button{
-        position: relative;
-        bottom: -7rem;
-        border: none;
-        border-radius: 8px;
-        background-color:$primary-color;
-        cursor: pointer;
-        width: 70%;
-        height: 1.3rem;
-    }
-    *::selection{
-        background: transparent;
-    }
-}
-
-#counter{
-    display: flex;
-    justify-content: space-around;
-    background-color:$secundary-color;
-    border-radius: 10px;
     position: relative;
-    bottom: -6rem;
-    width: 90%;
-    margin: 0 auto 0 auto;
-    border: 1px solid #67E1B4;
+    width: 250px;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    margin: 70px auto 0 auto;
 
+    .counter{
+        display: flex;
+        background-color:#45a29e;
+        justify-content: space-between;
+        margin: 0 5px 0 5px;
+        padding: 0 15px;
+        border-radius: 10px;
+        height: 25px;
 
-    span{
+        span{
+            padding: 0 8px;
+            cursor: pointer;
+        }
+
+        span:hover{
+            background-color: #eda7a9;
+            border-radius: 50%;
+        }
+        ::selection{
+            color: none;
+        }
+    }
+    button{
+        background-color: lightcoral;
+        border-radius: 10px;
+        padding: 1px 5px;
+        margin-top: 5px;
+        border: none;
         cursor: pointer;
-        width: 1rem;
-        border-radius: 50%;
-        
     }
-    span:hover{
-        background-color: $primary-color;
-        
+    button:hover{
+            box-shadow: 0 0 0.6rem #eda7a9;
     }
-
 }

@@ -14,22 +14,20 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
         if (counter >= max) 
         return;
             setCounter(counter + 1);
+
     }
 
-    const handleBtn = () => {
+    const handleBtn =()=>{
         onAdd(counter)
     }
 
     return (
         <div className="card">
-            <h4>Item</h4>
-            <p>Descripcion</p>
-            <div id="counter">
+            <div className="counter">
                 <span onClick={decrement}>-</span>
                 <span>{counter}</span>
-                <span onClick={increment}>+</span>
-            </div>
-            <button onClick={handleBtn}>Agregar al Carrito</button>
+                <span onClick={increment}>+</span></div>
+                <button onClick={handleBtn}>Chori</button>
         </div>
     );
 }

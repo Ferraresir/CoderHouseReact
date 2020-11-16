@@ -1,0 +1,40 @@
+.itemdetail{
+    display: flex;
+    flex-flow: row wrap;
+    position: relative;
+    top: 10rem;
+    width: 65%;
+    justify-content: center;
+    margin: 0 auto;
+    height: 30rem;
+    border: 1px solid black;
+
+    .itm2{
+        flex-basis: 50%;
+    }
+
+    .img {
+        position: relative;
+        object-fit: contain;
+        img{
+            margin-top: 5rem;
+            width: 350px;
+        }
+    }
+
+    .itemdata{
+        text-align: end;
+        padding-right: 30px;
+
+        h3{
+            margin-top: 30px;
+            margin-bottom: 30px;
+            text-decoration: underline;
+        }
+        p{
+            text-align: left;
+            
+            margin: 50px 0 0 45px;
+        }
+    }
+}

@@ -1,25 +1,50 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
-
+:root{
+  height: 100%;
+}
 
 *{
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
 }
-
 
 body{
-  background-color: rgba(237,167,169,1);
-  background-image: url(./imagenes/1.jpg);
-  background-size:cover;
-  background-repeat: no-repeat;
-
+  background-color: rgb(245, 238, 238);
 }
-@media (max-width: 870px){
-  body{
-    background-image: none;
-    background: rgb(237,167,169);
-    background: linear-gradient(100deg, rgba(237,167,169,1) 50%, rgba(174,215,211,1) 50%);
+
+
+@media (max-width: 1000px){
+ 
+  .itemdetail{
+    width: 90% !important;
+    img{
+      width: 250px !important;
+    }
   }
+
+  .header{
+    height: 850px !important;
+    
+  }
+
+
+  .w2{
+    h1{
+      font-size: 30px !important;
+      margin-top: 1rem !important;
+      margin-left: 0 !important;
+    }
+
+    img{
+      left: 0rem !important;
+      max-width: 400px;
+    }
+  }
+  .itemdetail{
+    height: 55rem !important;
+  }
+
 }

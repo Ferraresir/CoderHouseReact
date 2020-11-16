@@ -1,0 +1,48 @@
+.producto{
+    max-width: 280px;
+    height: 450px;
+    display: flex;
+    flex-flow: row wrap;
+    border-radius: 6px;
+    box-shadow: 0 0 0.1em rgba(0, 0, 0, 0.2);
+    background-color: white;
+    cursor: pointer;
+    transition-property: box-shadow;
+    transition-duration: 0.3s;
+    margin-bottom: 25px;
+
+    img{
+        height: 295px;
+        width: 100%;
+        object-fit: contain;
+    }
+    .info{
+        width: 100%;
+      justify-content: center;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 0.8rem;
+      border-top: 1px solid rgb(230, 230, 230);  
+      padding: 1rem;
+      display: flex;
+      flex-flow: column;
+      bottom: 0;
+      * + *{
+          margin-bottom: 1rem;
+      }
+      .precio{
+          font-size: 1.5em;
+      }
+      .envio{
+          background-color: #45a29e;
+          border-radius: 5px;
+          max-width: max-content;
+          margin: 0 auto;
+          padding: 3px;
+      }
+    }
+}
+
+.producto:hover{
+        box-shadow: 0 0 1.5em rgba(0, 0, 0, 0.2);
+}

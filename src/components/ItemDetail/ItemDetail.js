@@ -18,7 +18,7 @@ const ItemDetail = ({ data }) => {
     return (
         <div className='itemdetail'>
             <div className="img itm2">
-                <img src="https://http2.mlstatic.com/D_698056-MLA40809199286_022020-O.jpg" alt="" />
+                <img src={data.thumbnail} alt="" />
             </div>
             <div className="itemdata itm2">
                 <h3>{data.title}</h3>

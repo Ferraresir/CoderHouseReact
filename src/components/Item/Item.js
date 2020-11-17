@@ -1,8 +1,10 @@
 import React from 'react';
-import './item.scss'
+import './item.scss';
+import {Link} from 'react-router-dom'
 
-const Item = ({ price, img, title }) => {
+const Item = ({id, price, img, title }) => {
     return (
+        <Link to={'/item/'+id}>
         <div className="producto">
             <img src={img} alt="" />
             <div className="info">
@@ -12,6 +14,7 @@ const Item = ({ price, img, title }) => {
             </div>
 
         </div>
+        </Link>
     )
 }
 

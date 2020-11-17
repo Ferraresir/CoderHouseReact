@@ -9,7 +9,7 @@ const ItemList = ({ products}) => {
             return <p>Cargando...</p>
         }
         const list = products.map((e, index) => {
-            return <Item key={index} title={e.title} stock={e.available_quantity} price={e.price} img={e.thumbnail}/>
+            return <Item key={index} id={e.id} title={e.title} stock={e.available_quantity} price={e.price} img={e.thumbnail}/>
         })
         return list;
     }

@@ -8,4 +8,12 @@
     top: 7rem;
     margin-left: 15%;
     margin-right: 15%;
+
+    a{
+        text-decoration: none;
+        &:focus, &:hover, &:visited, &:link, &:active {
+            text-decoration: none;
+            color: black;
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import React from 'react';
 import './navbar.scss';
 import Carticon from '../carticon/Carticon';
-import {NavLink} from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 
 
 function NavBar() {
@@ -15,12 +15,14 @@ function NavBar() {
                     <div className='line3'></div>
                 </div>
             </label>
-            <h1>CODERMARKET</h1>
+            <NavLink to="/">
+                <h1>CODERMARKET</h1>
+            </NavLink>
             <ul>
                 <li><NavLink to="/">Inicio</NavLink></li>
                 <li><NavLink to="/">Nosotros</NavLink></li>
                 <li><NavLink to="/">Productos</NavLink></li>
-                <li id='cart'><NavLink to="/"><Carticon/></NavLink></li>
+                <li id='cart'><NavLink to="/"><Carticon /></NavLink></li>
             </ul>
         </nav>
     )

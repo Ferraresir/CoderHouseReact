@@ -5,11 +5,8 @@ import './itemList.scss'
 
 const ItemList = ({ products}) => {
     const MostrarProductos = () => {
-        if (!products) {
-            return <p>Cargando...</p>
-        }
-        const list = products.map((e, index) => {
-            return <Item key={index} id={e.id} title={e.title} stock={e.available_quantity} price={e.price} img={e.thumbnail}/>
+        const list = products.map((products,index) => {
+            return <Item key={index} product={products}/>
         })
         return list;
     }

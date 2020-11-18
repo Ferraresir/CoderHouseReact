@@ -17,9 +17,10 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
 
     }
 
+
     useEffect(() => {
-        onAdd(counter)
-    }, [counter])
+       onAdd(counter)
+    }, [counter,onAdd])
 
     return (
         <div className="card">

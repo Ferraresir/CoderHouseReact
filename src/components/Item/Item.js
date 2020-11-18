@@ -2,14 +2,14 @@ import React from 'react';
 import './item.scss';
 import {Link} from 'react-router-dom'
 
-const Item = ({id, price, img, title }) => {
+const Item = ({product}) => {
     return (
-        <Link to={'/item/'+id}>
+        <Link to={'/item/'+product.id}>
         <div className="producto">
-            <img src={img} alt="" />
+            <img src={product.thumbnail} alt="" />
             <div className="info">
-                <span className="precio"><b>${price}</b></span>
-                <span className="title">{title}</span>
+                <span className="precio"><b>${product.price}</b></span>
+                <span className="title">{product.title}</span>
                 <span className="envio">Envio gratis</span>
             </div>
 

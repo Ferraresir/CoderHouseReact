@@ -19,17 +19,15 @@ body{
 @media (max-width: 1000px){
  
   .itemdetail{
+    top: 2rem !important;
     width: 90% !important;
     img{
       width: 250px !important;
     }
   }
-
   .header{
     height: 850px !important;
-    
   }
-
 
   .w2{
     h1{

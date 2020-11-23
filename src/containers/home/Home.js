@@ -16,23 +16,20 @@ const getProducts = () => {
 
 
 const Home = ({ gretting }) => {
-    const [products, setProducts] = useState()
+    const [loading, setLoading] = useState(true)
+    const [products, setProducts] = useState([])
     useEffect(() => {
+        setLoading(true)
         getProducts()
             .then((response) => {
                 return (response);
             })
             .then((response) => {
                 setProducts(response);
+                setLoading(false)
             })
     }, []);
 
-    const MostrarList = () => {
-        if (!products) {
-            return <p>Cargando...</p>
-        }
-        return <ItemList products={products} />
-    }
 
 return (
     <>
@@ -46,7 +43,9 @@ return (
                 <img src={img} alt="" />
             </div>
         </div>
-        <MostrarList />
+        {loading ? <p>Cargando...</p> : <ItemList products={products} />}
+         
+        
     </>
 )
 }

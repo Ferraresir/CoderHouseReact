@@ -21,8 +21,15 @@ function NavBar() {
             <ul>
                 <li><NavLink to="/">Inicio</NavLink></li>
                 <li><NavLink to="/">Nosotros</NavLink></li>
-                <li><NavLink to="/">Productos</NavLink></li>
-                <li id='cart'><NavLink to="/"><Carticon /></NavLink></li>
+                <li className="withsub"><NavLink to="/">Productos</NavLink>
+                    <ul className="submenu">
+                        <li><NavLink to="/">Auriculares</NavLink></li>
+                        <li><NavLink to="/">Mouses</NavLink></li>
+                        <li><NavLink to="/">Teclados</NavLink></li>
+                        <li><NavLink to="/">Parlantes</NavLink></li>
+                    </ul>
+                </li>
+                <li id='cart'><NavLink to="/checkout"><Carticon /></NavLink></li>
             </ul>
         </nav>
     )

@@ -15,10 +15,12 @@
 
     .img {
         position: relative;
-        object-fit: contain;
+        object-fit: cover;
+        margin-top: auto;
+        margin-bottom: auto;
         img{
-            margin-top: 5rem;
-            width: 350px;
+            margin: auto;
+            max-width: 300px;
         }
     }
 

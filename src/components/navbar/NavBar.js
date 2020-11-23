@@ -23,10 +23,10 @@ function NavBar() {
                 <li><NavLink to="/">Nosotros</NavLink></li>
                 <li className="withsub"><NavLink to="/">Productos</NavLink>
                     <ul className="submenu">
-                        <li><NavLink to="/">Auriculares</NavLink></li>
-                        <li><NavLink to="/">Mouses</NavLink></li>
-                        <li><NavLink to="/">Teclados</NavLink></li>
-                        <li><NavLink to="/">Parlantes</NavLink></li>
+                        <li><NavLink to="/MLA3697">Auriculares</NavLink></li>
+                        <li><NavLink to="/MLA1714">Mouses</NavLink></li>
+                        <li><NavLink to="/MLA1713">Teclados</NavLink></li>
+                        <li><NavLink to="/MLA8618">Parlantes</NavLink></li>
                     </ul>
                 </li>
                 <li id='cart'><NavLink to="/checkout"><Carticon /></NavLink></li>

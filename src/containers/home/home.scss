@@ -26,10 +26,11 @@
     img{
         position: relative;
         bottom: 1rem;
+        top: 0;
         width: 25rem;
         flex-wrap: wrap;
         left: -2rem;
-        
+        z-index: 1;
 
     }
 }

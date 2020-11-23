@@ -17,9 +17,11 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
 
     }
 
-
     useEffect(() => {
-       onAdd(counter)
+        window.addEventListener('change', onAdd(counter))
+        return () => {
+        window.removeEventListener('change',onAdd(counter));
+        }
     }, [counter,onAdd])
 
     return (

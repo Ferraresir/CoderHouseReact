@@ -26,7 +26,7 @@ const ItemDetail = ({ data }) => {
                 {loading ? <p>Cargando... </p> : <img src={data.pictures[0].url} alt="" />}
             </div>
             <div className="itemdata itm2">
-                <h3>{data.title}</h3>
+                <h3>{data.title.substr(0,60)}...</h3>
                 <p>Precio: {data.price}</p>
                 <p>Stock:  {data.available_quantity} - Vendidos:{data.sold_quantity}</p>
                 <p>{data.warranty}</p>

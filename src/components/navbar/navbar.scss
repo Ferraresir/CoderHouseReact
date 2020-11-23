@@ -11,6 +11,7 @@ nav{
         }
 
          ul {
+             z-index: 2;
             margin-top: 1rem;
             float:  right;
             margin-right: 45px;
@@ -18,7 +19,6 @@ nav{
         
 
             li {
-                
                 display: inline-flex;
                 line-height: 50px;
                 margin: -0.5rem 30px;

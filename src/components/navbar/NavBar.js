@@ -4,6 +4,7 @@ import Carticon from '../carticon/Carticon';
 import { NavLink } from 'react-router-dom'
 
 
+
 function NavBar() {
     return (
         <nav>
@@ -29,7 +30,7 @@ function NavBar() {
                         <li><NavLink to="/MLA8618">Parlantes</NavLink></li>
                     </ul>
                 </li>
-                <li id='cart'><NavLink to="/checkout"><Carticon /></NavLink></li>
+                <li id='cart'><NavLink to="/checkout"><Carticon/></NavLink></li>
             </ul>
         </nav>
     )

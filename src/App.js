@@ -13,14 +13,14 @@ function App() {
       <div className="App">
         <NavBar />
         <Switch>
+        <Route exact path="/Checkout">
+            <Cart />
+          </Route>
           <Route exact path="/:type?">
             <Home gretting="Una Nueva Forma de descubrir la tecnologia!" />
           </Route>
           <Route exact path="/item/:id">
             <ItemDetailContainer />
-          </Route>
-          <Route exact path="/Checkout">
-            <Cart />
           </Route>
         </Switch>
         {/*Footer */}

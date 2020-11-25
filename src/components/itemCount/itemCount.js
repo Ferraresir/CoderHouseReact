@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import './itemCount.scss'
 
 const ItemCount = ({ initialValue, max, min, onAdd }) => {
@@ -8,21 +8,15 @@ const ItemCount = ({ initialValue, max, min, onAdd }) => {
         if (counter === min) 
         return;
             setCounter(counter - 1);
+            onAdd(counter -1)
     }
 
     const increment = () => {
         if (counter >= max) 
-        return;
+        return
             setCounter(counter + 1);
-
+            onAdd(counter +1)
     }
-
-    useEffect(() => {
-        window.addEventListener('change', onAdd(counter))
-        return () => {
-        window.removeEventListener('change',onAdd(counter));
-        }
-    }, [counter,onAdd])
 
     return (
         <div className="card">

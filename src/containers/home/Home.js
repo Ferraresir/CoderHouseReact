@@ -9,7 +9,7 @@ import './home.scss';
 //
 const getProducts = (type) => {
     const serverData = new Promise(resolve => {
-        fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${type || 'MLA8618'}&limit=8`)
+        fetch(`https://api.mercadolibre.com/sites/MLA/search?category=${type || 'MLA430630&limit=12'}&limit=8`)
             .then(response => response.json())
             .then(mlData => {
                 resolve(mlData.results)

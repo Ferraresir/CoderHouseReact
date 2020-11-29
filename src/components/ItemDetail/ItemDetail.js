@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState,useContext } from 'react';
 import ItemCount from '../../components/itemCount/itemCount';
-import './ItemDetail.scss'
+import './ItemDetail.scss';
+import {CartContext} from '../../context/cartContext';
 
 const ItemDetail = ({ data }) => {
+    const cartContext = useContext(CartContext)
     const [count, setCount] = useState(1)
 
     const onAdd = (counter) => {
@@ -10,9 +12,9 @@ const ItemDetail = ({ data }) => {
     }
 
     const handleBtn = () => {
-        console.log("Esta comprando " + count + " de " + data.id);
+        cartContext.cambiarData(data.id,count)
+        console.log(CartContext.data);
     }
-
     return (
         <div className='itemdetail'>
             <div className="img itm2">

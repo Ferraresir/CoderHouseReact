@@ -1,0 +1,17 @@
+.carlist{
+    margin: 2rem auto 0 auto;
+    display: flex;
+    flex-flow: row wrap;
+    border: 1px solid black;
+    width: 70%;
+
+    .w3{
+        flex-basis: 75%;
+        border: 1px solid black;
+        width: 90%;
+    }
+    .w1{
+        flex-basis: 25%;
+        height: 35rem;
+    }
+}

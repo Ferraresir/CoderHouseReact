@@ -4,7 +4,7 @@ import './ItemDetail.scss';
 import {CartContext} from '../../context/cartContext';
 
 const ItemDetail = ({ data }) => {
-    const cartContext = useContext(CartContext)
+    const context = useContext(CartContext)
     const [count, setCount] = useState(1)
 
     const onAdd = (counter) => {
@@ -12,9 +12,9 @@ const ItemDetail = ({ data }) => {
     }
 
     const handleBtn = () => {
-        cartContext.cambiarData(data.id,count)
-        console.log(CartContext.data);
+        context.cambiarData({data:data,count:count})
     }
+    
     return (
         <div className='itemdetail'>
             <div className="img itm2">

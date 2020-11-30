@@ -1,33 +1,37 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { CartContext } from '../../context/cartContext';
 import './cart.scss';
 
 
-
 const Cart = () => {
-    const [total, setTotal] = useState(Number);
     const context = useContext(CartContext);
+    const handleBtn = (props) => {
+        context.deleteData(props)
+    }
     const MostrarCart = () => {
-        const cartlist = context.Data.map(({ count, data }, index) => {
+        const cartlist = context.Data.map(({ items, data }, index) => {
             return <div key={index}>
                 <img src={data.thumbnail} alt="" />
                 <span>{data.name}</span>
                 <span>Precio: {data.price}</span>
                 <span>{data.warranty}</span>
-                <span>Cantidad: {count}</span>
+                <span>Cantidad: {items}</span>
+                <button onClick={() => handleBtn({ id: index, amount: items, price: data.price })}>x</button>
             </div>
         })
         return cartlist
     }
 
-
+    useEffect(() => {
+        console.log(context);
+    }, [context])
     return (
         <div className='carlist'>
             <div className="w3">
                 <MostrarCart />
             </div>
             <div className='w1'>
-                <span>Total:{total}</span>
+                <p>Total:{context.Total}</p>
             </div>
         </div>
 

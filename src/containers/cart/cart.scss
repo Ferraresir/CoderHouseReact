@@ -2,16 +2,32 @@
     margin: 2rem auto 0 auto;
     display: flex;
     flex-flow: row wrap;
-    border: 1px solid black;
-    width: 70%;
+    width: 80%;
 
     .w3{
-        flex-basis: 75%;
-        border: 1px solid black;
-        width: 90%;
+        display: flex;
+        flex-flow: column wrap;
+        flex-basis: 70%;
+        width: 90%; 
+        div{
+            display: flex;
+            justify-content: space-around;
+            height: 10rem;
+            
+
+            img{
+                max-width: 7rem;
+                object-fit: contain;
+            }
+            
+        }
     }
     .w1{
+        width: 100%;
+        margin-left: 1rem;
         flex-basis: 25%;
         height: 35rem;
+        background-color: rgba(128, 128, 128, 0.178);
+
     }
 }

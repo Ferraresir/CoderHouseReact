@@ -1,33 +1,60 @@
-.carlist{
-    margin: 2rem auto 0 auto;
-    display: flex;
-    flex-flow: row wrap;
-    width: 80%;
+.small-container{
+    max-width: 80%;
+    margin: auto;
+    padding-left: 25px;
+    padding-right:25px ;
+}
 
-    .w3{
-        display: flex;
-        flex-flow: column wrap;
-        flex-basis: 70%;
-        width: 90%; 
-        div{
-            display: flex;
-            justify-content: space-around;
-            height: 10rem;
-            
+.cart-page{
+    margin: 80px auto;
+    table{
+        width: 100%;
+        border-collapse: collapse;
 
-            img{
-                max-width: 7rem;
-                object-fit: contain;
-            }
+        th{
+            text-align: left;
+            padding: 5px;
+            color: white;
+            background: #eda7a9;
+            font-weight: normal;
+        }
+        td{
+            padding: 10px 5px;
             
         }
+        img{
+            width: 80px;
+            height: 80px;
+            margin-right: 10px;
+        }
+        p:last-child{
+            cursor: pointer;
+            color:#45a29e ;
+            width: 50px;
+            margin: 0 auto;
+        }
     }
-    .w1{
-        width: 100%;
-        margin-left: 1rem;
-        flex-basis: 25%;
-        height: 35rem;
-        background-color: rgba(128, 128, 128, 0.178);
+}
 
+.cart.info{
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.total{
+    display: flex;
+    justify-content: flex-end;
+
+    table{
+       border-top: 3px solid #eda7a9; 
+       width: 100%;
+       max-width: 370px;
     }
+}
+td:last-child{
+    text-align: right;
+}
+
+th:last-child{
+    text-align: right;
 }

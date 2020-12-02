@@ -12,7 +12,7 @@ const ItemDetail = ({ data }) => {
     }
 
     const handleBtn = () => {
-        context.cambiarData({ data: data, items: count, price: data.price * count })
+        context.cambiarData({ data: data, amount: count, price: data.price * count })
     }
 
     return (

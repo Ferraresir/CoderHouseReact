@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../../context/cartContext';
 import './cart.scss';
 
@@ -9,30 +9,55 @@ const Cart = () => {
         context.deleteData(props)
     }
     const MostrarCart = () => {
-        const cartlist = context.Data.map(({ items, data }, index) => {
-            return <div key={index}>
-                <img src={data.thumbnail} alt="" />
-                <span>{data.name}</span>
-                <span>Precio: {data.price}</span>
-                <span>{data.warranty}</span>
-                <span>Cantidad: {items}</span>
-                <button onClick={() => handleBtn({ id: index, amount: items, price: data.price })}>x</button>
-            </div>
+        const cartlist = context.Data.map(({ amount, data }, index) => {
+            return <tr key={index}>
+                <td>
+                    <div className='cart-info'>
+                        <img src={data.thumbnail} alt="" />
+                    </div>
+                    <div>
+                        <p>{data.title}</p>
+                        <small>Precio: ${data.price}</small>
+                        <p onClick={() => handleBtn({ id: index, amount: amount, price: data.price })}>Quitar</p>
+                    </div>
+                </td>
+                <td>{amount}</td>
+                <td>{data.price * amount}</td>
+            </tr>
         })
         return cartlist
     }
 
-    useEffect(() => {
-        console.log(context);
-    }, [context])
+
     return (
-        <div className='carlist'>
-            <div className="w3">
-                <MostrarCart />
+        <div className='small-container cart-page'>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>SubTotal</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <MostrarCart />
+                </tbody>
+            </table>
+            <div className="total">
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>Envio</td>
+                            <td>Gratis</td>
+                        </tr>
+                        <tr>
+                            <td>Total</td>
+                            <td>{context.Total}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
-            <div className='w1'>
-                <p>Total:{context.Total}</p>
-            </div>
+
         </div>
 
     )

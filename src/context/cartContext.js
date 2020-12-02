@@ -13,10 +13,18 @@ export const CartProvider = ({ children }) => {
         setTotal(Total - (price * amount))
     }
 
-    const cambiarData = ({ data, price, items }) => {
-        setData([...Data, { data, items }])
+    const cambiarData = ({ data, price, amount }) => {
+        const index = Data.findIndex(item => item.data.id === data.id);
+        if (index !== -1) {
+            let aux = { ...Data[index], amount: Data[index].amount + amount }
+            Data.splice(index, 1)
+            setData([...Data, aux])
+        } else {
+            setData([...Data, { data, amount }])
+        }
+
         setTotal(Total + price)
-        setCount(Count + items)
+        setCount(Count + amount)
     }
 
     return <CartContext.Provider value={{ Data, Total, Count, cambiarData, deleteData }}>

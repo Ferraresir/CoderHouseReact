@@ -5,12 +5,13 @@ import './carticon.scss'
 
 const Carticon = () => {
     const context = useContext(CartContext)
- 
+
 
     return (
         <>
             <img src={Cart} alt="" />
-            <div className='carcount'>{context.Count}</div>
+            {context.Count === 0 ? '' : <div className='carcount'>{context.Count}</div>}
+
         </>
     )
 }

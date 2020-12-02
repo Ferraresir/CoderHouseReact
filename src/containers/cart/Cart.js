@@ -49,11 +49,11 @@ const Cart = () => {
                     <tbody>
                         <tr>
                             <td>Envio</td>
-                            <td>Gratis</td>
+                            <td>{context.Total > 10000 ? <span>Gratis</span> : <span>$200</span>}</td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td>{context.Total}</td>
+                            <td><b>$ {context.Total}</b></td>
                         </tr>
                     </tbody>
                 </table>

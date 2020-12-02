@@ -1,4 +1,5 @@
 import React, { useContext } from 'react';
+import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/cartContext';
 import './cart.scss';
 
@@ -40,7 +41,7 @@ const Cart = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    <MostrarCart />
+                    {context.Total === 0 ? <Link to="/">No Tiene Items, Vuelva a comprar</Link> : <MostrarCart />}
                 </tbody>
             </table>
             <div className="total">
@@ -57,9 +58,7 @@ const Cart = () => {
                     </tbody>
                 </table>
             </div>
-
         </div>
-
     )
 }
 

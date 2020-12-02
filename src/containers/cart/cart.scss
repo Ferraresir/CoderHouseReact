@@ -33,12 +33,19 @@
             width: 50px;
             margin: 0 auto;
         }
+        a{ 
+            position: relative;
+            top: 10rem;
+            font-weight: bold;
+            font-size: 2rem;
+        }
     }
 }
 
 .cart.info{
     display: flex;
     flex-flow: row wrap;
+    
 }
 
 .total{
@@ -58,3 +65,4 @@ td:last-child{
 th:last-child{
     text-align: right;
 }
+

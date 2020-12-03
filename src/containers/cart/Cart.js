@@ -30,8 +30,8 @@ const Cart = () => {
     }
 
 
-    return (
-        <div className='small-container cart-page'>
+    const WithItems = () => {
+        return <>
             <table>
                 <thead>
                     <tr>
@@ -41,7 +41,7 @@ const Cart = () => {
                     </tr>
                 </thead>
                 <tbody>
-                    {context.Total === 0 ? <Link to="/">No Tiene Items, Vuelva a comprar</Link> : <MostrarCart />}
+                    <MostrarCart />
                 </tbody>
             </table>
             <div className="total">
@@ -58,6 +58,14 @@ const Cart = () => {
                     </tbody>
                 </table>
             </div>
+        </>
+    }
+
+
+
+    return (
+        <div className='small-container cart-page'>
+            {context.Count > 0 ? <WithItems /> : <Link to="/">Aun no ha agregado items, Vuelva al Shop</Link>}
         </div>
     )
 }

@@ -22,7 +22,7 @@ body{
     top: 2rem !important;
     width: 90% !important;
     img{
-      width: 250px !important;
+      max-height: 250px !important;
     }
   }
   .row{
@@ -31,20 +31,28 @@ body{
 
   .w2{
     h1{
-      font-size: 30px !important;
+      font-size: 20px !important;
       margin-top: 1rem !important;
       margin-left: 0 !important;
     }
 
     img{
       left: 0rem !important;
-      max-width: 360px;
+      max-width: 300px;
     }
   }
   .itemdetail{
     height: 55rem !important;
     h3{
       padding-right: 0 !important;
+    }
+  }
+  .cart-page{
+    width: 100%;
+    table{
+     position: relative;
+     right: 1rem;
+     font-size: 0.9rem;
     }
   }
 }

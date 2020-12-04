@@ -14,7 +14,7 @@ const Cart = () => {
             return <tr key={index}>
                 <td>
                     <div className='cart-info'>
-                        <img src={data.image} alt="" />
+                        <img src={data.thumbnail} alt="" />
                     </div>
                     <div>
                         <p>{data.title}</p>

@@ -26,7 +26,7 @@ function NavBar() {
                     <ul className="submenu">
                         <li><NavLink to="/MLA3697">Auriculares</NavLink></li>
                         <li><NavLink to="/MLA1714">Mouses</NavLink></li>
-                        <li><NavLink to="/MLA418448">Teclados</NavLink></li>
+                        <li><NavLink to="/MLA1713">Teclados</NavLink></li>
                         <li><NavLink to="/MLA8618">Parlantes</NavLink></li>
                     </ul>
                 </li>

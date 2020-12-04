@@ -18,12 +18,12 @@ const ItemDetail = ({ data }) => {
     return (
         <div className='itemdetail'>
             <div className="img itm2">
-                <img src={data.image} alt="" />
+                <img src={data.pictures[0].url} alt="" />
             </div>
             <div className="itemdata itm2">
-                <h3>{data.name.substr(0, 60)}...</h3>
+                <h3>{data.title.substr(0, 60)}...</h3>
                 <p>Precio: {data.price}</p>
-                <p>Stock:  {data.stock}</p>
+                <p>Stock:  {data.available_quantity} - Vendidos:{data.sold_quantity}</p>
                 <p>{data.warranty}</p>
                 <div className="compra">
                     <ItemCount initialValue={1} max={10} min={1} onAdd={onAdd} />

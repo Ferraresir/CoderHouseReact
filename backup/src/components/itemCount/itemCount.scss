@@ -1,0 +1,30 @@
+.card{
+    position: relative;
+    width: 240px;
+    padding: 10px;
+    text-align: center;
+    margin: 70px auto 0 auto;
+
+    .counter{
+        display: flex;
+        background-color:#45a29e;
+        justify-content: space-between;
+        margin: 0 5px 0 5px;
+        padding: 0 15px;
+        border-radius: 10px;
+        height: 25px;
+
+        span{
+            padding: 0 8px;
+            cursor: pointer;
+        }
+
+        span:hover{
+            background-color: #eda7a9;
+            border-radius: 50%;
+        }
+        ::selection{
+            color: none;
+        }
+    }
+}

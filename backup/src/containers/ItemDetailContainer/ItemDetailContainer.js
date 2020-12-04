@@ -3,24 +3,21 @@ import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import './ItemDetailContainer.scss';
 import { getFirestore } from '../../firebase';
-const db = getFirestore();
-const fireData = db.collection('productos');
 
 
 const ItemDetailContainer = () => {
     const { id } = useParams()
     const [loading, setLoading] = useState(true)
     const [product, setProduct] = useState([]);
-
     useEffect(() => {
         setLoading(true)
-        fireData.doc(id).get()
-            .then(element => {
-                setProduct({...element.data(),id})
+        fetch('https://api.mercadolibre.com/items/' + id)
+            .then(response => response.json())
+            .then(mlItem => {
+                setProduct(mlItem)
                 setLoading(false)
-
             })
-    }, [id]);
+    }, [id])
 
     return (
         <div>

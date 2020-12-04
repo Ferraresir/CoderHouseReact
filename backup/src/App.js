@@ -17,7 +17,7 @@ function App() {
             <Route exact path="/Checkout">
               <Cart />
             </Route>
-            <Route exact path="/:cat?">
+            <Route exact path="/:type?">
               <Home gretting="Una Nueva Forma de descubrir la tecnologia!" />
             </Route>
             <Route exact path="/item/:id">

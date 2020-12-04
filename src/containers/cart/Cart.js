@@ -61,8 +61,6 @@ const Cart = () => {
         </>
     }
 
-
-
     return (
         <div className='small-container cart-page'>
             {context.Count > 0 ? <WithItems /> : <Link to="/">Aun no ha agregado items, Vuelva al Shop</Link>}

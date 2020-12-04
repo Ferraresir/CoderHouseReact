@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import './ItemDetailContainer.scss';
+import { getFirestore } from '../../firebase';
 
 
 const ItemDetailContainer = () => {
-
     const { id } = useParams()
     const [loading, setLoading] = useState(true)
     const [product, setProduct] = useState([]);

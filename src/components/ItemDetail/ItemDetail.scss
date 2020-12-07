@@ -8,6 +8,7 @@
     margin: 0 auto;
     height: 30rem;
     border: 1px solid black;
+    background: white;
 
     .itm2{
         flex-basis: 50%;
@@ -19,9 +20,27 @@
         margin-top: auto;
         margin-bottom: auto;
         img{
+            position: relative;
             margin: auto;
             max-width: 300px;
             max-height: 450px;
+        }
+        img[animation='1']{
+            animation: cart 0.4s 1 ease-in;
+        }
+        @keyframes cart {
+              from{
+                bottom: 10px;
+                left: 10px;  
+                width: 100%;
+                opacity: 90%;
+              }   
+              to{
+                bottom: 340px;
+                left: 1100px;
+                width: 20%;
+                opacity: 10%;
+              } 
         }
     }
 

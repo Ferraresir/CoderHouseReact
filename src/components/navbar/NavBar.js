@@ -3,8 +3,6 @@ import './navbar.scss';
 import Carticon from '../carticon/Carticon';
 import { NavLink } from 'react-router-dom'
 
-
-
 function NavBar() {
     return (
         <nav>

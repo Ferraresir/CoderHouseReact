@@ -11,7 +11,7 @@ const Item = ({ product }) => {
                 <div className="info">
                     <span className="precio"><b>${product.price}</b></span>
                     <span className="title">{product.name.substr(0,80)}...</span>
-                    <span className="envio">Envio gratis</span>
+                    <span className="envio">Entrega Inmediata</span>
                 </div>
 
             </div>

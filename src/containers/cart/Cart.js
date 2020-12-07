@@ -53,7 +53,7 @@ const Cart = () => {
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td><b>$ {context.Total}</b></td>
+                            <td><b>{context.Total > 10000 ? context.Total : context.Total +200}</b></td>
                         </tr>
                     </tbody>
                 </table>

@@ -2,6 +2,7 @@ import React from 'react';
 import './navbar.scss';
 import Carticon from '../carticon/Carticon';
 import { NavLink } from 'react-router-dom'
+import Logo from '../../imagenes/logo_small.png'
 
 function NavBar() {
     return (
@@ -15,7 +16,7 @@ function NavBar() {
                 </div>
             </label>
             <NavLink to="/">
-                <h1>CODERMARKET</h1>
+                <img id='logo' src={Logo} alt=""/>
             </NavLink>
             <ul>
                 <li><NavLink to="/">Inicio</NavLink></li>

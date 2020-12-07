@@ -1,17 +1,17 @@
 nav{
+    background-color: black;
    height: 5rem;
-   background-color:black;
-           h1 {
+           #logo {
             position: absolute;
-            width: 200px;
-            margin-top: 1.5rem;
-            left: 5%;
+            max-width: 100px;
+            margin-top: 0.5rem;
+            left: 7%;
             color:#eda7a9;
             text-transform: uppercase;
         }
 
          ul {
-             z-index: 2;
+            z-index: 2;
             margin-top: 1rem;
             float:  right;
             margin-right: 45px;

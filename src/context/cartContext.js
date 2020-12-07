@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-
 export const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
@@ -13,21 +12,20 @@ export const CartProvider = ({ children }) => {
         setTotal(Total - (price * amount))
     }
 
-    const cambiarData = ({ data, price, amount }) => {
-        const index = Data.findIndex(item => item.data.id === data.id);
-        if (index !== -1) {
-            let aux = { ...Data[index], amount: Data[index].amount + amount }
-            Data.splice(index, 1)
-            setData([...Data, aux])
-        } else {
-            setData([...Data, { data, amount }])
-        }
 
+    const cambiarData = ({ data, price, amount }) => {
+        const element = Data.find((item) => item.data.id === data.id)
+        if (element === undefined) {
+            setData([...Data, { data, amount }])
+        } else {
+            element.amount += amount
+            setData([...Data])
+        }
         setTotal(Total + price)
         setCount(Count + amount)
     }
 
-    return <CartContext.Provider value={{ Data, Total, Count, cambiarData, deleteData }}>
+    return <CartContext.Provider value={{ Data, Total, Count, cambiarData, deleteData}}>
         {children}
     </CartContext.Provider>
 }

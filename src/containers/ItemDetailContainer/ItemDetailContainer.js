@@ -2,9 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom';
 import ItemDetail from '../../components/ItemDetail/ItemDetail';
 import './ItemDetailContainer.scss';
-import { getFirestore } from '../../firebase';
-const db = getFirestore();
-const fireData = db.collection('productos');
+import { getData } from '../../backend/firebase/products'
 
 
 const ItemDetailContainer = () => {
@@ -14,9 +12,9 @@ const ItemDetailContainer = () => {
 
     useEffect(() => {
         setLoading(true)
-        fireData.doc(id).get()
+        getData(id)
             .then(element => {
-                setProduct({...element.data(),id})
+                setProduct({...element, id })
                 setLoading(false)
 
             })

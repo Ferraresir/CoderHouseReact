@@ -3,6 +3,14 @@
     margin: auto;
     padding-left: 25px;
     padding-right:25px ;
+    
+    button{
+        border: none;
+        background-color:#45a29e;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+    }
 }
 
 .cart-page{
@@ -38,6 +46,8 @@
             top: 10rem;
             font-weight: bold;
             font-size: 2rem;
+
+            
         }
     }
 }

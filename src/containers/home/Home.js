@@ -2,27 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import ItemList from '../../components/ItemList/ItemList';
 import img from '../../imagenes/hips.png';
-import { getFirestore } from '../../firebase';
+import { getProducts } from '../../backend/firebase/products';
 import './home.scss';
-
-const getProducts = (cat) => {
-    const db = getFirestore();
-    let fireData = db.collection('productos').limit(8)
-    if (cat) fireData = fireData.where("category_id", "==", `${cat}`)
-    const serverData = new Promise(resolve => {
-        fireData.get()
-            .then(response => response.docs)
-            .then(data => {
-                const dataarr = data.map(doc => {
-                    const item = doc.data()
-                    const id = doc.id
-                    return ({ id, ...item })
-                })
-                resolve(dataarr)
-            })
-    })
-    return (serverData);
-}
 
 const Home = ({ gretting }) => {
     const [loading, setLoading] = useState(true);
@@ -33,23 +14,19 @@ const Home = ({ gretting }) => {
     const MostrarSort = () => {
         return (<>
             <label htmlFor="sort">Ordenar Por: </label>
-            <select  name="sort" id="sort">
-                <option onClick={(e)=> setSort(e.target.value)} value='name'>Nombre</option>
-                <option onClick={(e)=> setSort(e.target.value)} value='price'>Precio</option>
+            <select name="sort" id="sort">
+                <option onClick={(e) => setSort(e.target.value)} value='name'>Nombre</option>
+                <option onClick={(e) => setSort(e.target.value)} value='price'>Precio</option>
             </select>
         </>
         )
     }
-
     useEffect(() => {
         setLoading(true)
         getProducts(cat)
             .then((response) => {
-                return (response);
-            })
-            .then((response) => {
-                if (sort === 'name') response.sort((a, b) => a.name > b.name)
-                if (sort === 'price') response.sort((a, b) => a.price - b.price)
+               response.sort((a, b) => a.name > b.name)
+               if (sort === 'price') response.sort((a, b) => a.price - b.price)
                 setProducts(response);
                 setLoading(false)
 

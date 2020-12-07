@@ -63,7 +63,7 @@ const Cart = () => {
 
     return (
         <div className='small-container cart-page'>
-            {context.Count > 0 ? <WithItems /> : <Link to="/">Aun no ha agregado items, Vuelva al Shop</Link>}
+            {context.Count > 0 ? <WithItems /> : <div><p>No tiene items en el carrito</p><br/><Link to="/"><button>Volver Al Catalogo</button></Link></div>}
         </div>
     )
 }

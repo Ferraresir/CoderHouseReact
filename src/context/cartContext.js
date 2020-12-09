@@ -18,14 +18,14 @@ export const CartProvider = ({ children }) => {
         setTotal(gtotal)
     }
 
-    const deleteData = ({ id, amount, price }) => {
+    const deleteData = ({ id }) => {
         let dato = Data
         dato.splice(id, 1)
         setData([...dato])
     }
 
 
-    const cambiarData = ({ data, price, amount }) => {
+    const cambiarData = ({ data, amount }) => {
         const element = Data.find((item) => item.data.id === data.id)
         if (element === undefined) {
             setData([...Data, { data, amount }])

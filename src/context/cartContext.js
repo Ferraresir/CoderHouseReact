@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 export const CartContext = React.createContext();
 
 export const CartProvider = ({ children }) => {
@@ -6,10 +6,22 @@ export const CartProvider = ({ children }) => {
     const [Count, setCount] = useState(Number);
     const [Total, setTotal] = useState(Number);
 
+    const productsCount = (prop) => {
+        let item = 0
+        prop.forEach((e) => item += (e.amount))
+        setCount(item)
+    }
+
+    const grandTotal = (prop) => {
+        let gtotal = 0
+        prop.forEach((e) => gtotal += (e.data.price * e.amount))
+        setTotal(gtotal)
+    }
+
     const deleteData = ({ id, amount, price }) => {
-        Data.splice(id, 1)
-        setCount(Count - amount)
-        setTotal(Total - (price * amount))
+        let dato = Data
+        dato.splice(id, 1)
+        setData([...dato])
     }
 
 
@@ -21,11 +33,14 @@ export const CartProvider = ({ children }) => {
             element.amount += amount
             setData([...Data])
         }
-        setTotal(Total + price)
-        setCount(Count + amount)
     }
 
-    return <CartContext.Provider value={{ Data, Total, Count, cambiarData, deleteData}}>
+    useEffect(() => {
+        productsCount(Data)
+        grandTotal(Data)
+    }, [Data])
+
+    return <CartContext.Provider value={{ Data, Total, Count, cambiarData, deleteData }}>
         {children}
     </CartContext.Provider>
 }

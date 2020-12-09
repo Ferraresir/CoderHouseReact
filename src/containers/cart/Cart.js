@@ -26,6 +26,7 @@ const Cart = () => {
                 <td>{data.price * amount}</td>
             </tr>
         })
+
         return cartlist
     }
 
@@ -53,7 +54,7 @@ const Cart = () => {
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td><b>{context.Total > 10000 ? context.Total : context.Total +200}</b></td>
+                            <td><b>{context.Total > 10000 ? context.Total : context.Total + 200}</b></td>
                         </tr>
                     </tbody>
                 </table>
@@ -63,7 +64,7 @@ const Cart = () => {
 
     return (
         <div className='small-container cart-page'>
-            {context.Count > 0 ? <WithItems /> : <div><p>No tiene items en el carrito</p><br/><Link to="/"><button>Volver Al Catalogo</button></Link></div>}
+            {context.Count > 0 ? <WithItems /> : <div><p>No tiene items en el carrito</p><br /><Link to="/"><button>Volver Al Catalogo</button></Link></div>}
         </div>
     )
 }

@@ -9,12 +9,13 @@ const Home = ({ gretting }) => {
     const [loading, setLoading] = useState(true);
     const [products, setProducts] = useState([]);
     const [sort, setSort] = useState();
-    const { cat } = useParams('name');
+    const { cat } = useParams();
 
     const MostrarSort = () => {
         return (<>
-            <label htmlFor="sort">Ordenar Por: </label>
+            
             <select name="sort" id="sort">
+                <option selected value="">Ordenar Por:</option>
                 <option onClick={(e) => setSort(e.target.value)} value='name'>Nombre</option>
                 <option onClick={(e) => setSort(e.target.value)} value='price'>Precio</option>
             </select>
@@ -46,6 +47,7 @@ const Home = ({ gretting }) => {
                     <img src={img} alt="" />
                 </div>
             </div>
+            <br/>
             {cat ? <MostrarSort /> : ''}
             {loading ? <p>Cargando...</p> : <ItemList products={products} />}
 

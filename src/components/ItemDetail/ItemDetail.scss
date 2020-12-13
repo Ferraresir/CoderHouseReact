@@ -1,75 +1,91 @@
-.itemdetail{
-    display: flex;
-    flex-flow: row wrap;
+.itemdetail {
+  display: flex;
+  flex-flow: row wrap;
+  position: relative;
+  top: 10rem;
+  width: 65%;
+  justify-content: center;
+  margin: 0 auto;
+  height: 30rem;
+  border: 1px solid black;
+  background: white;
+
+  .itm2 {
+    flex-basis: 50%;
+  }
+
+  .img {
     position: relative;
-    top: 10rem;
-    width: 65%;
-    justify-content: center;
-    margin: 0 auto;
-    height: 30rem;
-    border: 1px solid black;
-    background: white;
-
-    .itm2{
-        flex-basis: 50%;
+    object-fit: cover;
+    margin-top: auto;
+    margin-bottom: auto;
+    img {
+      position: relative;
+      margin: auto;
+      max-width: 300px;
+      max-height: 450px;
     }
+    img[animation="1"] {
+      animation: cart 0.4s 1 ease-in;
+    }
+    @keyframes cart {
+      from {
+        bottom: 10px;
+        left: 10px;
+        width: 100%;
+        opacity: 90%;
+      }
+      to {
+        bottom: 340px;
+        left: 1100px;
+        width: 20%;
+        opacity: 10%;
+      }
+    }
+  }
 
-    .img {
+  .itemdata {
+    text-align: end;
+    h3 {
+      padding-right: 90px;
+      margin-top: 30px;
+      margin-bottom: 30px;
+      text-decoration: underline;
+    }
+    p {
+      text-align: left;
+      margin: 50px 0 0 45px;
+    }
+    .compra {
+      a {
+        text-decoration: none;
+      }
+      button {
+        display: flex;
         position: relative;
-        object-fit: cover;
-        margin-top: auto;
-        margin-bottom: auto;
-        img{
-            position: relative;
-            margin: auto;
-            max-width: 300px;
-            max-height: 450px;
-        }
-        img[animation='1']{
-            animation: cart 0.4s 1 ease-in;
-        }
-        @keyframes cart {
-              from{
-                bottom: 10px;
-                left: 10px;  
-                width: 100%;
-                opacity: 90%;
-              }   
-              to{
-                bottom: 340px;
-                left: 1100px;
-                width: 20%;
-                opacity: 10%;
-              } 
-        }
+        margin: 0 auto 0 auto;
+        background-color: lightcoral;
+        border-radius: 10px;
+        border: none;
+        cursor: pointer;
+        padding: 2px 8px 2px 8px;
+      }
+      .nostock {
+        color: black;
+        display: flex;
+        margin: 0 auto;
+        top: 3rem;
+        position: relative;
+        border: none;
+        background-color: #eda7a9;
+        padding: 10px;
+        border-radius: 20px;
+        cursor: pointer;
+        width: 7rem;
+      }
+      button:hover {
+        box-shadow: 0 0 0.6rem #eda7a9;
+      }
     }
-
-    .itemdata{
-        text-align: end;
-        h3{
-            padding-right: 90px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-            text-decoration: underline;
-        }
-        p{
-            text-align: left;
-            margin: 50px 0 0 45px;
-        }
-        .compra{
-            button{
-                display: flex;
-                position: relative;
-                margin: 0 auto 0 auto;
-                background-color: lightcoral;
-                border-radius: 10px;
-                border: none;
-                cursor: pointer;
-                padding: 2px 8px 2px 8px;
-            }
-            button:hover{
-                    box-shadow: 0 0 0.6rem #eda7a9;
-            }
-        }
-    }
+  }
 }

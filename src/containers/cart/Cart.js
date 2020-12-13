@@ -1,14 +1,21 @@
-import React, { useContext } from 'react';
+import React, { useContext,useEffect } from 'react';
 import { Link } from 'react-router-dom'
 import { CartContext } from '../../context/cartContext';
 import './cart.scss';
 
 
 const Cart = () => {
+    const envio = 400
     const context = useContext(CartContext);
     const handleBtn = (props) => {
         context.deleteData(props)
     }
+
+    useEffect(() => {
+       var existing = JSON.parse(localStorage.getItem('Data'))
+       console.log(existing);
+    }, [])
+
     const MostrarCart = () => {
         const cartlist = context.Data.map(({ amount, data }, index) => {
             return <tr key={index}>
@@ -50,11 +57,11 @@ const Cart = () => {
                     <tbody>
                         <tr>
                             <td>Envio</td>
-                            <td>{context.Total > 10000 ? <span>Gratis</span> : <span>$200</span>}</td>
+                            <td>{context.Total > 10000 ? <span>Gratis</span> : <span>${envio}</span>}</td>
                         </tr>
                         <tr>
                             <td>Total</td>
-                            <td><b>{context.Total > 10000 ? context.Total : context.Total + 200}</b></td>
+                            <td><b>{context.Total > 10000 ? context.Total : context.Total + envio}</b></td>
                         </tr>
                     </tbody>
                 </table>

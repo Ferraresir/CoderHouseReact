@@ -1,4 +1,5 @@
 import React, { useState, useContext } from 'react';
+import {Link} from 'react-router-dom'
 import ItemCount from '../../components/itemCount/itemCount';
 import './ItemDetail.scss';
 import { CartContext } from '../../context/cartContext';
@@ -26,9 +27,13 @@ const ItemDetail = ({ data }) => {
                 <p>Precio: {data.price}</p>
                 <p>Stock:  {data.stock}</p>
                 <p>{data.warranty}</p>
-                <div className="compra">
-                    <ItemCount initialValue={1} max={10} min={1} onAdd={onAdd} />
-                    <button onClick={()=>{handleBtn(); setAnimation(1)}}>Comprar {count}</button>
+                <div className="compra"> 
+                   {data.stock > 0 ? 
+                   (<div>
+                    <ItemCount initialValue={1} max={data.stock} min={1} onAdd={onAdd} />
+                    <button onClick={()=>{handleBtn(); setAnimation(1)}}>Comprar Por ${count * data.price}</button>
+                    </div>)
+                     : <Link to='/'><button className='nostock'>No Hay Stock</button></Link>}
                 </div>
             </div>
         </div>

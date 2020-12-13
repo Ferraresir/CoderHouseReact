@@ -5,8 +5,6 @@ import './carticon.scss'
 
 const Carticon = () => {
     const context = useContext(CartContext)
-
-
     return (
         <>
             <img src={Cart} alt="" />
@@ -15,5 +13,4 @@ const Carticon = () => {
         </>
     )
 }
-
 export default Carticon

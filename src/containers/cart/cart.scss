@@ -1,78 +1,78 @@
-.small-container{
-    max-width: 80%;
-    margin: auto;
-    padding-left: 25px;
-    padding-right:25px ;
+.small-container {
+  max-width: 80%;
+  margin: auto;
+  padding-left: 25px;
+  padding-right: 25px;
+
+  .btnborrar {
+    position: relative;
+    background-color: #eda7a9;
     
-    button{
-        border: none;
-        background-color:#45a29e;
-        padding: 10px;
-        border-radius: 20px;
-        cursor: pointer;
+  }
+  button {
+    border: none;
+    background-color: #45a29e;
+    padding: 10px;
+    border-radius: 20px;
+    cursor: pointer;
+  }
+}
+
+.cart-page {
+  margin: 80px auto;
+  table {
+    width: 100%;
+    border-collapse: collapse;
+
+    th {
+      text-align: left;
+      padding: 5px;
+      color: white;
+      background: #eda7a9;
+      font-weight: normal;
     }
-}
-
-.cart-page{
-    margin: 80px auto;
-    table{
-        width: 100%;
-        border-collapse: collapse;
-
-        th{
-            text-align: left;
-            padding: 5px;
-            color: white;
-            background: #eda7a9;
-            font-weight: normal;
-        }
-        td{
-            padding: 10px 5px;
-            
-        }
-        img{
-            max-width: 50px;            
-            margin-right: 10px;
-            object-fit: contain;
-        }
-        p:last-child{
-            cursor: pointer;
-            color:#45a29e ;
-            width: 50px;
-            margin: 0 auto;
-        }
-        a{ 
-            position: relative;
-            top: 10rem;
-            font-weight: bold;
-            font-size: 2rem;
-
-            
-        }
+    td {
+      padding: 10px 5px;
     }
-}
-
-.cart.info{
-    display: flex;
-    flex-flow: row wrap;
-    
-}
-
-.total{
-    display: flex;
-    justify-content: flex-end;
-
-    table{
-       border-top: 3px solid #eda7a9; 
-       width: 100%;
-       max-width: 370px;
+    img {
+      max-width: 50px;
+      margin-right: 10px;
+      object-fit: contain;
     }
-}
-td:last-child{
-    text-align: right;
+    p:last-child {
+      cursor: pointer;
+      color: #45a29e;
+      width: 50px;
+      margin: 0 auto;
+    }
+    a {
+      position: relative;
+      top: 10rem;
+      font-weight: bold;
+      font-size: 2rem;
+    }
+  }
 }
 
-th:last-child{
-    text-align: right;
+.cart.info {
+  display: flex;
+  flex-flow: row wrap;
 }
 
+.total {
+  display: flex;
+  justify-content: flex-end;
+
+  table {
+    border-top: 3px solid #eda7a9;
+    width: 100%;
+    max-width: 370px;
+  }
+}
+td:last-child {
+  text-align: right;
+}
+
+th:last-child {
+  text-align: right;
+}

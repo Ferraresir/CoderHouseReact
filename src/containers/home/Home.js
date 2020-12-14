@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import ItemList from "../../components/ItemList/ItemList";
 import img from "../../imagenes/hips.png";
+import { useParams } from "react-router-dom";
 import { getProducts } from "../../backend/firebase/products";
 import "./home.scss";
 
@@ -10,8 +10,7 @@ const Home = ({ gretting }) => {
   const [products, setProducts] = useState([]);
   const [sort, setSort] = useState('name');
   const { cat } = useParams();
-  console.log(sort);
-
+  
   const MostrarSort = () => {
     return (
       <>
@@ -30,7 +29,7 @@ const Home = ({ gretting }) => {
   useEffect(() => {
     setLoading(true);
     getProducts(cat).then((response) => {
-     response.sort((a, b) => a.name > b.name)
+     response.sort((a, b) => a.name > b.name ? 1 : -1)
      if (sort === "price") response.sort((a, b) => a.price - b.price)
       setProducts(response);
       setLoading(false);

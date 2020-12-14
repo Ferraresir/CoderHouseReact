@@ -1,13 +1,13 @@
 import React, { useContext } from 'react';
-import Cart from '../../imagenes/shopping-cart.svg';
 import { CartContext } from '../../context/cartContext';
 import './carticon.scss'
+import {RiShoppingCartLine} from 'react-icons/ri'
 
 const Carticon = () => {
     const context = useContext(CartContext)
     return (
         <>
-            <img src={Cart} alt="" />
+            <RiShoppingCartLine size={22}/>
             {context.Count === 0 ? '' : <div className='carcount'>{context.Count}</div>}
 
         </>

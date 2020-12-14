@@ -1,8 +1,8 @@
 .carcount{
     position: absolute;
     background-color:#ff9da0;
-    height: 1.4rem;
-    width: 1.4rem;
+    height: 1.3rem;
+    width: 1.3rem;
     border-radius: 100px;
     line-height: 22px;
     font-size: 0.9rem;
@@ -13,4 +13,10 @@
 
 .carcount:hover{
     -webkit-text-fill-color: black;
+}
+
+@media (max-width: 870px ){
+    .carcount{
+        top: -0.4rem;
+    }
 }

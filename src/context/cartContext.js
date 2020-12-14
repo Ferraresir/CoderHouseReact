@@ -24,6 +24,9 @@ export const CartProvider = ({ children }) => {
         setData([...dato])
     }
 
+    const deleteAll = ()=>{
+        setData([])
+    }
 
     const cambiarData = ({ data, amount }) => {
         const element = Data.find((item) => item.data.id === data.id)
@@ -34,13 +37,19 @@ export const CartProvider = ({ children }) => {
             setData([...Data])
         }
     }
+    useEffect(() => {
+        let localData = JSON.parse(localStorage.getItem('Cart'))
+        console.log(localData);
+        if(localData) setData(localData)
+    }, [])
 
     useEffect(() => {
+        localStorage.setItem('Cart',JSON.stringify(Data))
         productsCount(Data)
         grandTotal(Data)
     }, [Data])
 
-    return <CartContext.Provider value={{ Data, Total, Count, cambiarData, deleteData }}>
+    return <CartContext.Provider value={{ Data, Total, Count, cambiarData, deleteData, deleteAll }}>
         {children}
     </CartContext.Provider>
 }

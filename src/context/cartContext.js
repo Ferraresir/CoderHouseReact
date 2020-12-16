@@ -39,8 +39,7 @@ export const CartProvider = ({ children }) => {
     }
     useEffect(() => {
         let localData = JSON.parse(localStorage.getItem('Cart'))
-        console.log(localData);
-        if(localData) setData(localData)
+        localData && setData(localData)
     }, [])
 
     useEffect(() => {

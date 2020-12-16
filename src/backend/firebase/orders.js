@@ -7,7 +7,6 @@ export const getOrders =(email)=>{
         .then((orders)=>{
             if(orders.lenght===0 ) reject('No se encontraron pedidos a su nombre')
             console.log(orders.docs.map((doc)=> console.log(doc.data())));
-            
         })
     })
 }

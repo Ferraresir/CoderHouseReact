@@ -49,7 +49,7 @@ const Home = ({ gretting }) => {
         </div>
       </div>
       <br />
-      {cat ? <MostrarSort /> : ""}
+      {cat && <MostrarSort />}
       {loading ? <p>Cargando...</p> : <ItemList products={products} />}
     </>
   );

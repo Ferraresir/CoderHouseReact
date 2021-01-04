@@ -1,13 +1,28 @@
-.small-container {
-  max-width: 80%;
-  margin: auto;
-  padding-left: 25px;
-  padding-right: 25px;
+.cart-page {
+  display: flex;
+  width: 80%;
+  margin: 4rem auto 0 auto;
+  flex-flow: row wrap;
 
-  .btnborrar {
-    position: relative;
-    background-color: #eda7a9;
-    
+  .no-items{
+    margin: 0 auto;
+  }
+   .w3 {
+    flex-basis: 80%;
+    border: 1px solid black;
+    background: linear-gradient(
+    270deg,
+    rgba(226, 215, 215, 1) 0%,
+    rgba(255, 255, 255, 1) 85%
+  );
+  }
+
+  .w1 {
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: flex-end;
+    flex-basis: 20%;
+    border: 1px solid black;
   }
   button {
     border: none;
@@ -15,108 +30,14 @@
     padding: 10px;
     border-radius: 20px;
     cursor: pointer;
+    position: relative;
+    display:flex;
+    margin: 20px auto;
+  }
+  .btnborrar {
+    background-color: #eda7a9;  
   }
 }
 
-.cart-page {
-  margin: 80px auto;
-  table {
-    width: 100%;
-    border-collapse: collapse;
+  
 
-    th {
-      text-align: left;
-      padding: 5px;
-      color: white;
-      background: #eda7a9;
-      font-weight: normal;
-    }
-    td {
-      padding: 10px 5px;
-    }
-    img {
-      max-width: 50px;
-      margin-right: 10px;
-      object-fit: contain;
-    }
-    p:last-child {
-      cursor: pointer;
-      color: #45a29e;
-      width: 50px;
-      margin: 0 auto;
-    }
-    a {
-      position: relative;
-      top: 10rem;
-      font-weight: bold;
-      font-size: 2rem;
-    }
-  }
-}
-
-.cart.info {
-  display: flex;
-  flex-flow: row wrap;
-}
-
-.total {
-  display: flex;
-  justify-content: flex-end;
-
-  table {
-    border-top: 3px solid #eda7a9;
-    width: 100%;
-    max-width: 370px;
-  }
-}
-td:last-child {
-  text-align: right;
-}
-
-th:last-child {
-  text-align: right;
-}
-
-#modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  .userimput {
-    display: flex;
-    flex-flow: column nowrap;
-    background-color: #eecfd0;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 20rem;
-    p{
-     text-decoration: underline;
-     margin-bottom: 20px;
-    }
-    label{
-      font-size: 0.8rem;
-    }
-    input{
-      width: 100%;
-      padding: 5px 0;
-      margin-top: 10px;
-      border-radius: 5px;
-      border: 1px solid #45a29e;
-    }
-    input[type=submit]{
-      margin-top: 15px;
-      width: 50%;
-      border-radius: 40px;
-      border: none;
-      background-color:#45a29e ;
-    }
-  }
-}

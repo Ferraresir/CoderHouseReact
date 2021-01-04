@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import ItemList from "../../components/ItemList/ItemList";
+import ItemList from "../../components/item-list/ItemList";
 import img from "../../imagenes/hips.png";
 import { useParams } from "react-router-dom";
 import { getProducts } from "../../backend/firebase/products";

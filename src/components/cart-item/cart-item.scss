@@ -1,0 +1,27 @@
+.cart-info {
+  display: flex;
+  border-top: 1px solid black;
+  .cartimg {
+    max-height: 157px;
+    max-width: 101px;
+    width: auto;
+    margin-left: 30px;
+  }
+  .cartdescrip {
+    display: flex;
+    height:157px;
+    flex-flow: column wrap;
+    margin:auto;
+    justify-content: space-around;
+    div:first-of-type{
+      font-weight: bold;
+    }
+    p{
+      font-size: 0.9rem;
+    }
+    p:last-of-type{ 
+      cursor: pointer;
+      color: rgba(255, 0, 0, 0.747);
+    }
+  }
+}

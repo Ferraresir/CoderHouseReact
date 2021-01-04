@@ -1,5 +1,7 @@
 import { getAuth } from './index'
 
+//Sin implementar. login de usuario para complat y consultar pedidos
+
 export const singup = (email,password)=>{
     return new Promise((resolve,reject)=>{
         getAuth().createUserWithEmailAndPassword(email, password)

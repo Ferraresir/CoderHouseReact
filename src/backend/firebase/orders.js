@@ -1,6 +1,6 @@
 import { getFirestore } from "./index";
 
-
+//Sin Implementar
 export const getOrders =(email)=>{
     return new Promise ((resolve,reject) =>{
         getFirestore().collection('orders').where('email','==',`${email}`).get()

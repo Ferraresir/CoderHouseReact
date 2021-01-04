@@ -1,8 +1,8 @@
 import React, { useState, useContext } from 'react';
 import {Link} from 'react-router-dom'
-import ItemCount from '../../components/itemCount/itemCount';
-import './ItemDetail.scss';
 import { CartContext } from '../../context/cartContext';
+import ItemCount from '../../components/item-count/itemCount';
+import './ItemDetail.scss';
 
 const ItemDetail = ({ data }) => {
     const context = useContext(CartContext)

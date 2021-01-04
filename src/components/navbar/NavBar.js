@@ -1,19 +1,29 @@
 import React,{useState,useEffect} from 'react';
 import './navbar.scss';
-import Carticon from '../carticon/Carticon';
+import Carticon from '../cart-icon/Carticon';
 import { NavLink } from 'react-router-dom'
 import Logo from '../../imagenes/logo_small.png'
-import {FiUser} from 'react-icons/fi'
+import {getCategories} from '../../backend/firebase/products'
 
 
 function NavBar() {
     const [checked, setChecked] = useState(false)
+    const [categories, setCategories] = useState([])
     const handleCheck=()=>{
         setChecked(!checked)
     }
     useEffect(() => {
-        console.log(checked);
-    }, [checked])
+        getCategories()
+        .then((response)=> setCategories(response.sort((a, b) => a.name > b.name ? 1 : -1)))
+    }, [])
+
+    const CategoriMenu=()=>{
+       const cats = categories.map((categories,index)=>{
+           return <li key={index}><NavLink to={`/${categories.url}`}>{categories.name}</NavLink></li>
+       })
+       return cats
+    }
+
 
     return (
         <nav>
@@ -33,14 +43,10 @@ function NavBar() {
                 <li onClick={()=> handleCheck()}><NavLink to="/">Nosotros</NavLink></li>
                 <li className="withsub">Productos
                     <ul className="submenu">
-                        <li onClick={()=> handleCheck()}><NavLink to="/MLA3697">Auriculares</NavLink></li>
-                        <li onClick={()=> handleCheck()}><NavLink to="/MLA1714">Mouses</NavLink></li>
-                        <li onClick={()=> handleCheck()}><NavLink to="/MLA418448">Teclados</NavLink></li>
-                        <li onClick={()=> handleCheck()}><NavLink to="/MLA8618">Parlantes</NavLink></li>
+                        <CategoriMenu/>
                     </ul>
                 </li>
-                <li><FiUser size={21}/></li>
-                <li onClick={()=> handleCheck()} id='cart'><NavLink to="/checkout"><Carticon/></NavLink></li>
+                <li onClick={()=> handleCheck()} id='cart'><NavLink to="/cart"><Carticon/></NavLink></li>
             </ul>
         </nav>
     )
